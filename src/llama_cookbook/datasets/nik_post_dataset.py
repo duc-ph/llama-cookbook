@@ -78,3 +78,7 @@ class NikPostDataset(Dataset):
             "labels": labels.tolist(),
             "attention_mask": example_mask.tolist(),
         }
+
+
+def get_nik_post_dataset(dataset_config, tokenizer, split):
+    return NikPostDataset(dataset_config, tokenizer, split)

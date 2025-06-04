@@ -6,7 +6,7 @@ from functools import partial
 from llama_cookbook.datasets.grammar_dataset.grammar_dataset import get_dataset as get_grammar_dataset
 from llama_cookbook.datasets.alpaca_dataset import InstructionDataset as get_alpaca_dataset
 from llama_cookbook.datasets.custom_dataset import get_custom_dataset, get_data_collator
-from llama_cookbook.datasets.nik_post_dataset import NikPostDataset as get_nik_post_dataset
+from llama_cookbook.datasets.nik_post_dataset import get_nik_post_dataset
 from llama_cookbook.datasets.samsum_dataset import get_preprocessed_samsum as get_samsum_dataset
 from llama_cookbook.datasets.toxicchat_dataset import get_llamaguard_toxicchat_dataset as get_llamaguard_toxicchat_dataset
 DATASET_PREPROC = {
@@ -14,7 +14,7 @@ DATASET_PREPROC = {
     "grammar_dataset": get_grammar_dataset,
     "samsum_dataset": get_samsum_dataset,
     "custom_dataset": get_custom_dataset,
-    "nik_post_dataset": partial(get_nik_post_dataset),
+    "nik_post_dataset": get_nik_post_dataset,
     "llamaguard_toxicchat_dataset": get_llamaguard_toxicchat_dataset,
 }
 DATALOADER_COLLATE_FUNC = {
